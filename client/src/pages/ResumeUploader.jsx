@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { ClipLoader } from "react-spinners";
+import { motion } from "framer-motion";
 
 const ResumeUploader = () => {
   const [file, setFile] = useState(null);
   const [documentType, setDocumentType] = useState("coverLetter");
+  const [jobDescription, setJobDescription] = useState("");
   const [loading, setLoading] = useState(false);
   const [responses, setResponses] = useState([]);
   const [error, setError] = useState("");
@@ -15,6 +17,10 @@ const ResumeUploader = () => {
 
   const handleDocumentTypeChange = (event) => {
     setDocumentType(event.target.value);
+  };
+
+  const handleJobDescriptionChange = (event) => {
+    setJobDescription(event.target.value);
   };
 
   const handleSubmit = async (event) => {
@@ -32,10 +38,11 @@ const ResumeUploader = () => {
     const formData = new FormData();
     formData.append("resume", file);
     formData.append("documentType", documentType);
+    formData.append("jobDescription", jobDescription);
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/generate",
+        "http://localhost:9090/api/generate",
         formData,
         {
           headers: {
@@ -50,6 +57,12 @@ const ResumeUploader = () => {
     } finally {
       setLoading(false);
     }
+  };
+
+  const copyToClipboard = (text) => {
+    navigator.clipboard.writeText(text).then(() => {
+      alert("Copied to clipboard!");
+    });
   };
 
   // Styles object
@@ -73,6 +86,15 @@ const ResumeUploader = () => {
       margin: "20px 0",
     },
     fileInput: {
+      margin: "10px 0",
+      padding: "10px",
+      fontSize: "16px",
+      borderRadius: "5px",
+      border: "1px solid #ced4da",
+      width: "100%",
+      boxSizing: "border-box",
+    },
+    textInput: {
       margin: "10px 0",
       padding: "10px",
       fontSize: "16px",
@@ -115,6 +137,7 @@ const ResumeUploader = () => {
     },
     responses: {
       marginTop: "20px",
+      textAlign: "left",
     },
     response: {
       border: "1px solid #dee2e6",
@@ -122,6 +145,27 @@ const ResumeUploader = () => {
       margin: "10px 0",
       borderRadius: "5px",
       backgroundColor: "#ffffff",
+      position: "relative",
+    },
+    subject: {
+      fontWeight: "bold",
+      marginBottom: "5px",
+    },
+    copyButton: {
+      position: "absolute",
+      top: "10px",
+      right: "10px",
+      padding: "5px 10px",
+      backgroundColor: "#007bff",
+      color: "white",
+      border: "none",
+      borderRadius: "5px",
+      cursor: "pointer",
+      fontSize: "14px",
+      transition: "background-color 0.3s ease",
+    },
+    copyButtonHover: {
+      backgroundColor: "#0056b3",
     },
     backButton: {
       marginTop: "20px",
@@ -138,6 +182,7 @@ const ResumeUploader = () => {
       backgroundColor: "#5a6268",
     },
   };
+
   return (
     <div style={styles.container}>
       <h2 style={styles.header}>Upload Your Resume</h2>
@@ -175,6 +220,15 @@ const ResumeUploader = () => {
           </label>
         </div>
         <div>
+          <label htmlFor="jobDescription">Job Description:</label>
+          <textarea
+            id="jobDescription"
+            rows="4"
+            onChange={handleJobDescriptionChange}
+            style={styles.textInput}
+          ></textarea>
+        </div>
+        <div>
           <button
             type="submit"
             style={styles.button}
@@ -196,10 +250,34 @@ const ResumeUploader = () => {
         <div style={styles.responses}>
           <h3>Generated Documents</h3>
           {responses.map((response, index) => (
-            <div key={index} style={styles.response}>
-              <h4>Document {index + 1}</h4>
-              <p>{response}</p>
-            </div>
+            <motion.div
+              key={index}
+              style={styles.response}
+              initial={{ opacity: 0, translateY: 20 }}
+              animate={{ opacity: 1, translateY: 0 }}
+              transition={{ delay: index * 0.1 }}
+            >
+              <div style={styles.subject}>{response.subject}</div>
+              <div>{response.body}</div>
+              <button
+                style={styles.copyButton}
+                onMouseOver={(e) =>
+                  (e.target.style.backgroundColor =
+                    styles.copyButtonHover.backgroundColor)
+                }
+                onMouseOut={(e) =>
+                  (e.target.style.backgroundColor =
+                    styles.copyButton.backgroundColor)
+                }
+                onClick={() =>
+                  copyToClipboard(
+                    `${response.subject}\n\n${response.body}`
+                  )
+                }
+              >
+                Copy
+              </button>
+            </motion.div>
           ))}
         </div>
       )}
