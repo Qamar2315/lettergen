@@ -1,0 +1,18 @@
+const dummyData = [
+  {
+    subject: "Web Development Internship Application - Qamar Ul Islam",
+    body: "Dear Hiring Manager,\n\nI am writing to express my keen interest in the Web Development Internship at Software Synergy Solutions. As an aspiring web developer with a strong foundation in HTML, CSS, and JavaScript, I am eager to gain practical experience and contribute to real-world projects.\n\nMy passion for web development is evident in my personal projects, such as Quotewise, a web app built with Angular and TypeScript, and ChefConnect, a mobile application with a Node.js backend I developed and maintained. These projects demonstrate my ability to leverage various technologies and frameworks to deliver functional and engaging user experiences.\n\nI am particularly drawn to the opportunity to collaborate with your experienced development team, learn best practices, and expand my knowledge of cutting-edge web technologies. I am confident that my dedication to continuous learning and problem-solving will make me a valuable asset to your team.\n\nThank you for your time and consideration. I am excited to learn more about this opportunity and discuss how my skills and enthusiasm can contribute to Software Synergy Solutions.\n\nSincerely,\nQamar Ul Islam",
+  },
+  {
+    subject:
+      "Web Development Internship Application - Qamar Ul Islam - Node.js Expertise",
+    body: "Dear Hiring Manager,\n\nI am thrilled to apply for the Web Development Internship at Software Synergy Solutions. With my experience as a Node.js backend developer and proven success in a freelance environment, I believe I possess the skills and dedication to excel in this role.\n\nMy proficiency in Node.js, MongoDB, and MySQL is highlighted in my personal projects, such as Waterzilla, a platform with a robust backend for managing customer orders and sales reports. Furthermore, my recent achievement of Level One Seller status on Fiverr within four months demonstrates my ability to deliver high-quality solutions and meet client expectations.\n\nI am eager to apply my backend knowledge and expand my frontend expertise under the guidance of your experienced team. I am confident that I can contribute valuable insights and contribute to the success of your projects. \n\nThank you for your time and consideration. I look forward to the opportunity to discuss how my skills can benefit Software Synergy Solutions.\n\nSincerely,\nQamar Ul Islam",
+  },
+  {
+    subject:
+      "Web Development Internship Application - Qamar Ul Islam - Learning & Remote Work",
+    body: "Dear Hiring Manager,\n\nI am writing to express my strong interest in the Web Development Internship at Software Synergy Solutions. As a motivated and dedicated software engineering student, I am actively seeking opportunities to enhance my web development skills and gain real-world experience in a remote setting.\n\nMy coursework in software engineering has equipped me with a solid understanding of HTML, CSS, and JavaScript, and I am eager to expand my knowledge of web development frameworks and tools. I am particularly enthusiastic about the opportunity to learn from industry professionals and contribute to live projects, which aligns with my goal of becoming a skilled and well-rounded web developer.\n\nI am confident that my strong work ethic, adaptability, and eagerness to learn will make me a valuable addition to your team. I am available for the full three-month internship duration and excited to contribute to Software Synergy Solutions.\n\nThank you for your time and consideration. I look forward to the opportunity to discuss my qualifications further.\n\nSincerely,\nQamar Ul Islam",
+  },
+];
+
+module.exports = { dummyData };
