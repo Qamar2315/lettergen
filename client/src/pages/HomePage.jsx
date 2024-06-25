@@ -92,7 +92,7 @@ const Home = () => {
               e.target.style.backgroundColor = styles.button.backgroundColor;
             }}
           >
-            Upload Resume
+            Upload Resume Now
           </button>
         </section>
       </main>
