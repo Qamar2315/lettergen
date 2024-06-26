@@ -39,7 +39,6 @@ const ResumeUploader = () => {
     formData.append("resume", file);
     formData.append("documentType", documentType);
     formData.append("jobDescription", jobDescription);
-
     try {
       const response = await axios.post(
         "http://localhost:9090/api/generate",
@@ -50,8 +49,8 @@ const ResumeUploader = () => {
           },
         }
       );
-
-      setResponses(response.data); // Assuming the server returns an array of responses
+      console.log(response.data);
+      setResponses(JSON.parse(response.data)); // Assuming the server returns an array of responses
     } catch (error) {
       setError("An error occurred while processing your request.");
     } finally {
