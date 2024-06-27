@@ -22,6 +22,10 @@
 ### About Us Page
 ![Settings Page](screenshots\AboutUs.PNG)
 
+## Video Demo
+[![Watch the video](https://img.youtube.com/vi/4OXoCcdx-zQ/0.jpg)](https://www.youtube.com/watch?v=4OXoCcdx-zQ)
+
+
 **Current Status:**
 
 LetterGen is in its initial development stage. The core functionality for generating letters and emails is complete.  Future updates will include:
