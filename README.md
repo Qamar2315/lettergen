@@ -14,16 +14,16 @@
 * **Automated Generation:** Receive tailored cover letters and emails.
 
 ### Home Page
-![Home Page](https://github.com/Qamar2315/lettergen/blob/main/screenshots/Home.PNG)
+![Home Page](screenshots\Home.PNG)
 
 ### Resume Uploader Page
-![Dashboard](https://github.com/Qamar2315/lettergen/blob/main/screenshots/ResumeUploader.PNG)
+![Dashboard](screenshots\ResumeUploader.PNG)
 
 ### About Us Page
-![Settings Page](https://github.com/Qamar2315/lettergen/blob/main/screenshots/AboutUs.PNG)
+![Settings Page](screenshots\AboutUs.PNG)
 
-## Video Demo
-[![Watch the video](https://img.youtube.com/vi/4OXoCcdx-zQ/0.jpg)](https://www.youtube.com/watch?v=4OXoCcdx-zQ)
+### Demo
+[![LetterGen Demo](https://i.ytimg.com/vi/4OXoCcdx-zQ/maxresdefault.jpg)](https://www.youtube.com/watch?v=4OXoCcdx-zQ)
 
 
 **Current Status:**
