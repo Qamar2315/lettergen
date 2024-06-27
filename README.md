@@ -13,6 +13,15 @@
 * **Job Description Input:** Provide the relevant job description.
 * **Automated Generation:** Receive tailored cover letters and emails.
 
+### Home Page
+![Home Page](screenshots\Home.PNG)
+
+### Resume Uploader Page
+![Dashboard](screenshots\ResumeUploader.PNG)
+
+### About Us Page
+![Settings Page](screenshots\AboutUs.PNG)
+
 **Current Status:**
 
 LetterGen is in its initial development stage. The core functionality for generating letters and emails is complete.  Future updates will include:
