@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { ClipLoader } from "react-spinners";
 import { motion } from "framer-motion";
+import { BASE_URL } from "./config";
 
 const ResumeUploader = () => {
   const [file, setFile] = useState(null);
@@ -41,7 +42,7 @@ const ResumeUploader = () => {
     formData.append("jobDescription", jobDescription);
     try {
       const response = await axios.post(
-        "http://localhost:9090/api/generate",
+        `${BASE_URL}/api/generate`,
         formData,
         {
           headers: {
@@ -187,11 +188,11 @@ const ResumeUploader = () => {
       <h2 style={styles.header}>Upload Your Resume</h2>
       <form onSubmit={handleSubmit} style={styles.form}>
         <div>
-          <label htmlFor="resumeUpload">Upload Resume:</label>
+          <label htmlFor="resumeUpload">Upload Resume PDF Only :</label>
           <input
             type="file"
             id="resumeUpload"
-            accept=".pdf,.docx"
+            accept=".pdf"
             onChange={handleFileChange}
             style={styles.fileInput}
           />
